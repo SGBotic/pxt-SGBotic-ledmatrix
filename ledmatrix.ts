@@ -6,7 +6,7 @@
 
 namespace SGBotic {
 
-    export enum power{
+    export enum display{
         //%block="on"
         on,  
         //%block="off"
@@ -258,9 +258,9 @@ namespace SGBotic {
     * Turn on or off all MAX7219s
     */
     //% subcategory=LED_Matrix
-    //% block="power $status" status.defl=power.on
-    export function setPower(status: power) {
-        if (status === power.on)
+    //% block="display $status" status.defl=display.on
+    export function setDisplay(status: display) {
+        if (status === display.on)
             _registerAll(_SHUTDOWN, 1)
         else 
             _registerAll(_SHUTDOWN, 0)
@@ -272,7 +272,9 @@ namespace SGBotic {
     //% subcategory=LED_Matrix
     //% block="Clear dispaly" 
     export function clearAll() {
-        for (let i = 0; i < 8; i++) _registerAll(_DIGIT[i], 0)
+        for (let i = 0; i < 8; i++) 
+            _registerAll(_DIGIT[i], 0)
+        for (let i = 0; i < (_matrixNum + 2) * 8; i++)  _displayArray[i] = 0
     }
     
     /**
