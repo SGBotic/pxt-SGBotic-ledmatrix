@@ -30,8 +30,8 @@ namespace SGBotic {
     * Setup/reset MAX7219s. If you are using 4-in-1 module you'll need to set rotation as true. If your chain are consisted of single modules set it as false (default).
     */
     //% subcategory=LED_Matrix
-    //% block="setup:|number of matrixs $num|CS = $cs|DIN = $mosi|MISO(not used) = $miso|CLK = $sck"
-    //% num.min=1 num.defl=4 cs.defl=DigitalPin.P16 mosi.defl=DigitalPin.P15 miso.defl=DigitalPin.P14 sck.defl=DigitalPin.P13 rotate.defl=false 
+    //% block="setup:|number of matrixs $num|DIN = $mosi|CS = $cs|MISO(not used) = $miso|CLK = $sck"
+    //% num.min=1 num.defl=4 cs.defl=DigitalPin.P14 mosi.defl=DigitalPin.P13 miso.defl=DigitalPin.P15 sck.defl=DigitalPin.P16 rotate.defl=false 
     export function setup(num: number, cs: DigitalPin, mosi: DigitalPin, miso: DigitalPin, sck: DigitalPin) {
         // set internal variables        
         _pinCS = cs
@@ -233,6 +233,16 @@ namespace SGBotic {
         }
     }
     
+    /**
+    * convert number to string
+    */
+    //% subcategory=LED_Matrix
+    //% block="convert %num to text" 
+    export function numToString(num: number): string {
+    
+        return num.toString()
+    }
+    
      /**
     * Set brightness level of LEDs on all MAX7219s
     */
@@ -275,7 +285,7 @@ namespace SGBotic {
             _registerAll(_DIGIT[i], 255)
     }
     
-    
+
     
     export function displayLEDsForOne(newMatrix: number[][], index: number) {
         let columnValue = 0
