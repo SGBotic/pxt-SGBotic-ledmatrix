@@ -1,0 +1,19 @@
+{
+    "name": "pxt-SGBotic-ledmatrix",
+    "version": "0.1",
+    "description": "Makdecode block for 32*32 LED matrix display",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "radio": "*"
+    },
+    "files": [
+        "README.md",
+        "ledmatrix.ts",
+        "base.ts"
+    ],
+    "testFiles": [
+        "tests.ts"
+    ],
+    "public": true
+}
