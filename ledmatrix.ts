@@ -1,5 +1,5 @@
 /**
-* Makecode block for 32x32 LED matrix dislay
+* Makecode block for 32x8 LED matrix dislay
 * The code below is based on https://github.com/alankrantas/pxt-MAX7219_8x8
 * by Alan Wang
 */
