@@ -30,7 +30,7 @@ namespace SGBotic {
     * Setup/reset MAX7219s. If you are using 4-in-1 module you'll need to set rotation as true. If your chain are consisted of single modules set it as false (default).
     */
     //% subcategory=LED_Matrix
-    //% block="setup:|number of matrixs $num|DIN = $mosi|CS = $cs|MISO(not used) = $miso|CLK = $sck"
+    //% block="setup:|number of LED Block $num|DIN = $mosi|CS = $cs|MISO(not used) = $miso|CLK = $sck"
     //% num.min=1 num.defl=4 cs.defl=DigitalPin.P14 mosi.defl=DigitalPin.P13 miso.defl=DigitalPin.P15 sck.defl=DigitalPin.P16 rotate.defl=false 
     export function setup(num: number, cs: DigitalPin, mosi: DigitalPin, miso: DigitalPin, sck: DigitalPin) {
         // set internal variables        
