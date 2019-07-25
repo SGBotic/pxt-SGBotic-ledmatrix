@@ -270,7 +270,7 @@ namespace SGBotic {
     * Turn off all LEDs 
     */
     //% subcategory=LED_Matrix
-    //% block="Clear dispaly" 
+    //% block="Clear display" 
     export function clearAll() {
         for (let i = 0; i < 8; i++) 
             _registerAll(_DIGIT[i], 0)
